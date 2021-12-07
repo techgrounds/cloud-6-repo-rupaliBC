@@ -22,6 +22,6 @@
 [Its very slow installation]
 
 ### Resultaat
-![alt text ](https://github.com/techgrounds/cloud-6-repo-rupaliBC/issues/2#issue-1073593394)
+ img(https://github.com/techgrounds/cloud-6-repo-rupaliBC/issues/2#issue-1073593394)
 
 
