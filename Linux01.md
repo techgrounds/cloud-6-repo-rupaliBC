@@ -20,6 +20,6 @@
 [Its very slow installation]
 
 ### Resultaat
-![alt text ](C:\Users\rupal\Project\VirtualBox_ubuntu_07_12_2021_11_23_28)
+![alt text ](https://github.com/techgrounds/cloud-6-repo-rupaliBC/issues/2#issue-1073593394)
 
 
