@@ -6,9 +6,6 @@ Any group listed in /etc/group can be assigned as the group of a file.
 
 
 ## Key-terms
-1.Permission Groups
-
-Each file and directory has three user based permission groups:
 
 1. owner – The Owner permissions apply only the owner of the file or directory, they will not impact the actions of other users.
 2. group – The Group permissions apply only to the group that has been assigned to the file or directory, they will not effect the actions of other users.
