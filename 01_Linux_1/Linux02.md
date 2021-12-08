@@ -27,3 +27,9 @@
 
 
 ### Resultaat
+1. pwd
+2. ls
+3. mkdir
+4. cat > filename
+This is my first file
+5. cd
