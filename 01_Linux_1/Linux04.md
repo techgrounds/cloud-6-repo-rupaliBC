@@ -1,4 +1,4 @@
-# [Linux Commannds]
+# [Linux Commands- Echo]
 Every command in Linux has a standard input and output.
 The standard input (stdin) is the keyboard. If I run ‘mkdir myfolder’, the mkdir command will know what folder to create, because I typed ‘myfolder’.
 The standard output (stdout) is the terminal. The command ‘echo hello’ will write ‘hello’ in the terminal.
