@@ -1,13 +1,14 @@
 # [Linux Commannds]
-[Linux uses files and folders, like you’re used to with any OS you’ve used. Folders in Linux are called directories, so use that word when looking for commands or information.
-]
+Every command in Linux has a standard input and output.
+The standard input (stdin) is the keyboard. If I run ‘mkdir myfolder’, the mkdir command will know what folder to create, because I typed ‘myfolder’.
+The standard output (stdout) is the terminal. The command ‘echo hello’ will write ‘hello’ in the terminal.
+
+Both the input and output can be redirected to a file instead of the default. This is called input redirection and output redirection. 
+A pipe can be used to have the output of one command be the input of another command.
 
 ## Key-terms
-1. pwd - Current working directory
-2. ls- To list all files and directories
-3. mkdir- to create new directory
-4. cat - to create new file
-5. cd - to change the path
+1. echo command in linux is used to display line of text/string that are passed as an argument . This is a built in command that is mostly used in shell scripts and batch files to output status text to the screen or a file.
+2. Grep is a Linux / Unix command-line tool used to search for a string of characters in a specified file. The text search pattern is called a regular expression. When it finds a match, it prints the line with the result. The grep command is handy when searching through large log files.
 ## Opdracht
 **
 
@@ -21,7 +22,7 @@
 
 **
 ### Gebruikte bronnen
-
+https://phoenixnap.com/kb/grep-command-linux-unix-examples#:~:text=Grep%20is%20a%20Linux%20%2F%20Unix,searching%20through%20large%20log%20files.
 
 ### Ervaren problemen
 
