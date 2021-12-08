@@ -1,4 +1,4 @@
- [Linux Commannds]
+## Linux Commands for file permissions
 Every file in Linux contains a set of permissions. There are separate permissions for reading, writing, and executing files (rwx). There’s also three types of entities that can have different permissions: the owner of the file, a group, and everyone else. Root does not need permissions to read, write or execute a file.
 You can view a file’s permissions by creating a long listing. A file’s permissions, as well as its owner and group, can be changed as well.
 Any user listed in /etc/passwd can be assigned as owner of a file.
@@ -6,7 +6,13 @@ Any group listed in /etc/group can be assigned as the group of a file.
 
 
 ## Key-terms
-1.
+1.Permission Groups
+
+Each file and directory has three user based permission groups:
+
+1. owner – The Owner permissions apply only the owner of the file or directory, they will not impact the actions of other users.
+2. group – The Group permissions apply only to the group that has been assigned to the file or directory, they will not effect the actions of other users.
+3. all users – The All Users permissions apply to all other users on the system, this is the permission group that you want to watch the most.
 ## Opdracht
 **
 
@@ -22,6 +28,8 @@ Any group listed in /etc/group can be assigned as the group of a file.
 
 **
 ### Gebruikte bronnen
+https://www.pluralsight.com/blog/it-ops/linux-file-permissions
+https://www.linux.com/training-tutorials/understanding-linux-file-permissions/
 
 
 ### Ervaren problemen
