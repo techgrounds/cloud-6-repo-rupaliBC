@@ -21,7 +21,7 @@
 
 **
 ### Gebruikte bronnen
-
+https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files
 
 ### Ervaren problemen
 
