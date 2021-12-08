@@ -13,6 +13,9 @@ Each file and directory has three user based permission groups:
 1. owner – The Owner permissions apply only the owner of the file or directory, they will not impact the actions of other users.
 2. group – The Group permissions apply only to the group that has been assigned to the file or directory, they will not effect the actions of other users.
 3. all users – The All Users permissions apply to all other users on the system, this is the permission group that you want to watch the most.
+4. read – The Read permission refers to a user’s capability to read the contents of the file.
+5. write – The Write permissions refer to a user’s capability to write or modify a file or directory.
+6. execute – The Execute permission affects a user’s capability to execute a file or view the contents of a directory.
 ## Opdracht
 **
 
@@ -29,6 +32,7 @@ Each file and directory has three user based permission groups:
 **
 ### Gebruikte bronnen
 https://www.pluralsight.com/blog/it-ops/linux-file-permissions
+
 https://www.linux.com/training-tutorials/understanding-linux-file-permissions/
 
 
