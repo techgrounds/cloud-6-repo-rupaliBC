@@ -32,6 +32,8 @@ export PATH="/bin/myscripts:$PATH"
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/B1.png)
 
+A script that appends a line of text to a text file whenever it is executed.
+
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/bsh1.png)
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/bsh2.png)
