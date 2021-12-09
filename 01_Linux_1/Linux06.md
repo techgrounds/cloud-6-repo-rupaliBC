@@ -39,6 +39,8 @@ https://www.linux.com/training-tutorials/understanding-linux-file-permissions/
 ### Resultaat
 1. cat > newfile1.txt
 This is a new file
+
+![alt text](https://user-images.githubusercontent.com/95618055/145082904-93a6a6ca-f285-456b-a487-cdd919e93440.png)
 2. ls -l
 3. chmod u+x newfile1.txt
 4. chmod g-rw newfile1.txt
