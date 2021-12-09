@@ -33,3 +33,5 @@ My first file
 2. echo " Welcome to techgrounds" >> test.txt
 3. cat test.txt | grep "techgrounds"
 4. cat test.txt | grep "techgrounds" > test1.txt
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/A1.png)
