@@ -17,3 +17,5 @@ https://phoenixnap.com/kb/grep-command-linux-unix-examples#:~:text=Grep%20is%20a
 
 ## Ervaren problemen
 ## Resultaat
+![alt text](https://user-images.githubusercontent.com/95618055/145082904-93a6a6ca-f285-456b-a487-cdd919e93440.png)
+
