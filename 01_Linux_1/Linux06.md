@@ -40,10 +40,25 @@ https://www.linux.com/training-tutorials/understanding-linux-file-permissions/
 1. cat > newfile1.txt
 This is a new file
 
-![alt text](https://user-images.githubusercontent.com/95618055/145082904-93a6a6ca-f285-456b-a487-cdd919e93440.png)
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/r1.png)
+
 2. ls -l
-3. chmod u+x newfile1.txt
-4. chmod g-rw newfile1.txt
-5. chown rupali newfile1.txt
-6. groupadd grp1
-7. chown :grp1 newfile.txt
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/r2.png)
+
+4. chmod u+x newfile1.txt
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/r3.png)
+
+
+6. chmod g-rw newfile1.txt
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/r4.png)
+
+8. chown rupali newfile1.txt
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/r5.png)
+
+10. groupadd grp1
+
+12. chown :grp1 newfile.txt
