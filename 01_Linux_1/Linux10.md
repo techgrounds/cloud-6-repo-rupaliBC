@@ -1,20 +1,22 @@
-# [Linux]
-[Linux is, net als Windows of MacOS, een besturingssysteem. Het regelt de communicatie tussen het fysieke apparaat (hardware) en alle computerprogramma's (software).]
+# [Linux- Bash Script]
+A Bash script is a series of commands written in a text file. You can execute multiple commands in a row by just executing the script.
+Additional logic can be applied with the use of variables, conditions, and loops among others.
+
+In order to be able to execute the script, a user needs to have permissions to execute (x) the file.
+Linux will only be able to find the script if you specify the path name, or if you add the path to the directory in which the script lives to the PATH variable.
+
+
 
 ## Key-terms
-1. CLI - Command line inetrface
-2. Ubuntu -  Linux distro
-3. Virtuele Machine -Een Virtual Machine of Virtuele Machine (VM) deelt fysieke hardware resources met andere gebruikers, maar zorgt er ook voor de dat de eindgebruiker geen verandering ondervindt in het gebruik van applicaties en besturingssystemen.
-4. Virtualbox: VirtualBox is een populair virtualisatieproduct. Het is gratis, open source-software waarmee ontwikkelaars en IT-beheerders snel besturingssystemen kunnen implementeren
+
+
 ## Opdracht
-**
+# Exercise 1:
+- Create a directory called ‘scripts’. Place all the scripts you make in this directory.
+- Add the scripts directory to the PATH variable.
+- Create a script that appends a line of text to a text file whenever it is executed.
+- Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
 
--   Install a Ubuntu OS virtual machine on your laptop.
-    
--   Once installation and setup are complete, take a snapshot of the VM.
-    
-
-**
 ### Gebruikte bronnen
 https://linuxhint.com/30_bash_script_examples/#t26
 https://linuxconfig.org/how-to-add-directory-path-to-path-variable
@@ -22,7 +24,17 @@ https://linuxconfig.org/how-to-add-directory-path-to-path-variable
 
 
 ### Resultaat
-![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/a11.png)
+To add a directory to $PATH permanently, we’ll need to edit the .bashrc file of the user you want to change. Use nano or your favorite text editor to open the file, stored in the home directory.
+
+At the end of this file, put your new directory that you wish to permanently add to $PATH.
+
+export PATH="/bin/myscripts:$PATH"
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/B1.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/bsh1.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/bsh2.png)
 
 
 
