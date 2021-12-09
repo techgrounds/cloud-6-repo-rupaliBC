@@ -5,7 +5,7 @@ Additional logic can be applied with the use of variables, conditions, and loops
 In order to be able to execute the script, a user needs to have permissions to execute (x) the file.
 Linux will only be able to find the script if you specify the path name, or if you add the path to the directory in which the script lives to the PATH variable.
 
-Variables:
+## Variables:
 
 You can assign a value to a string of characters so that the value can be read somewhere else in the script.
 Assigning a variable is done using ‘=’.
@@ -18,12 +18,12 @@ Reading the value of a variable is done using ‘$<insert variable name here>’
 
 
 ## Opdracht
-# Exercise 1:
+  ### Exercise 1:
 - Create a directory called ‘scripts’. Place all the scripts you make in this directory.
 - Add the scripts directory to the PATH variable.
 - Create a script that appends a line of text to a text file whenever it is executed.
 - Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
-  ## Exercise 2:
+  ### Exercise 2:
 Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.
 
 ### Gebruikte bronnen
