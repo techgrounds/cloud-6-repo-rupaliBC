@@ -50,13 +50,15 @@ A script that appends a line of text to a text file whenever it is executed.
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/bsh2.png)
 
-
+## Excercise 2:
 Generating a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.:
   
   ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ran.png)
   
   ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ran1.png)
   
-
-
+## Excercise 3:
+ 
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ifrand1.png)
+  
 
