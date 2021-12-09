@@ -42,6 +42,9 @@ https://linuxhint.com/sudo_linux/
 6. usermod -aG sudo user1
 7. cat /etc/passwd
 
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/x1.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/x2.png)
 
 
 
