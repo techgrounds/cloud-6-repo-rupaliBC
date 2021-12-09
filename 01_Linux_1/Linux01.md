@@ -22,5 +22,4 @@
 [Its very slow installation]
 
 ### Resultaat
-![alt text](https://user-images.githubusercontent.com/95618055/145082904-93a6a6ca-f285-456b-a487-cdd919e93440.png)
-
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/a11.png)
