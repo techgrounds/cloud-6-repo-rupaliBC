@@ -9,6 +9,8 @@ Linux will only be able to find the script if you specify the path name, or if y
 
 ## Key-terms
 
+- Apache HTTPD is one of the most used web servers on the Internet. Apache HTTP Server is a free software/open source web server for Unix-like systems and other operating systems. A web server is a daemon that speaks the http(s) protocol, a text-based protocol for sending and receiving objects over a network connection
+
 
 ## Opdracht
 # Exercise 1:
