@@ -5,6 +5,11 @@ Additional logic can be applied with the use of variables, conditions, and loops
 In order to be able to execute the script, a user needs to have permissions to execute (x) the file.
 Linux will only be able to find the script if you specify the path name, or if you add the path to the directory in which the script lives to the PATH variable.
 
+Variables:
+
+You can assign a value to a string of characters so that the value can be read somewhere else in the script.
+Assigning a variable is done using ‘=’.
+Reading the value of a variable is done using ‘$<insert variable name here>’.
 
 
 ## Key-terms
@@ -18,6 +23,8 @@ Linux will only be able to find the script if you specify the path name, or if y
 - Add the scripts directory to the PATH variable.
 - Create a script that appends a line of text to a text file whenever it is executed.
 - Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
+  ## Exercise 2:
+Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.
 
 ### Gebruikte bronnen
 https://linuxhint.com/30_bash_script_examples/#t26
@@ -40,12 +47,11 @@ A script that appends a line of text to a text file whenever it is executed.
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/bsh2.png)
 
+Generating a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.
+  
+  ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ran.png)
+  
+  ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ran1.png)
 
-Variables:
 
-You can assign a value to a string of characters so that the value can be read somewhere else in the script.
-Assigning a variable is done using ‘=’.
-Reading the value of a variable is done using ‘$<insert variable name here>’.
-## Exercise 2:
-Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.
 
