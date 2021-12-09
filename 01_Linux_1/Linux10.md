@@ -23,7 +23,7 @@ Reading the value of a variable is done using ‘$<insert variable name here>’
 - Add the scripts directory to the PATH variable.
 - Create a script that appends a line of text to a text file whenever it is executed.
 - Create a script that installs the httpd package, activates httpd, and enables httpd. Finally, your script should print the status of httpd in the terminal.
-  ### Exercise 2:
+ ### Exercise 2:
 Create a script that generates a random number between 1 and 10, stores it in a variable, and then appends the number to a text file.
 
 ### Gebruikte bronnen
