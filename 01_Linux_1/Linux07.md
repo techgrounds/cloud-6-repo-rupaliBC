@@ -34,11 +34,7 @@ https://www.cyberciti.biz/faq/howto-display-process-pid-under-linux-unix/
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/startSSh.png)
 
-2. To identify proceed id -  pgrep ssh   or /       ps aux | grep {process-name}
-ps aux command options
-a:- This option prints the running processes from all users.
-u:- This option shows user or owner column in output.
-x:- This option prints the processes those have not been executed from the terminal.
+2. To identify process id -  pgrep ssh   
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/pidssh.png)
 
