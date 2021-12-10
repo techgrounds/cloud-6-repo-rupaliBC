@@ -7,11 +7,11 @@ A process is an instance of running code. All code is stored in files somewhere 
 
 
 ## Key-terms
-- Process - A process is an instance of running code.
+- Process - A process is a running instance of a program.
 - Services - Services responds to request which is coming from programs.
 - Process ID - Process identifier, also known as process ID or PID, is a unique number to identify each process running in an operating system such as Linux, Windows, and Unix.
 - SSH is the primary way to connect to remote Linux and Unix-like servers through the command line. It provides a secure connection that you can use to run commands, interact with the system.
-- Daemon -  A daemon is a service process that runs in the background and supervises the system or provides functionality to other processes
+- Daemon -  A daemon is a service process that runs in the background and supervises the system or provides functionality to other processes. These are specail types of background processes that start at system startup  and keep running forever as a service.They dont die.
 
 ## Opdracht
 - Start the ssh daemon.
