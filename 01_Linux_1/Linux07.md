@@ -43,6 +43,7 @@ x:- This option prints the processes those have not been executed from the termi
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/pidssh.png)
 
 3. To find out how much memory ssh is using- pmap -x PID 
+
 -x : This option is used to display the memory map in an extended format
 
 
