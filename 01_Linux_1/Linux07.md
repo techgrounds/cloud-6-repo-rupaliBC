@@ -13,14 +13,14 @@ A process is an instance of running code. All code is stored in files somewhere 
 - SSH is the primary way to connect to remote Linux and Unix-like servers through the command line. It provides a secure connection that you can use to run commands, interact with the system.
 - Daemon -  A daemon is a service process that runs in the background and supervises the system or provides functionality to other processes. These are specail types of background processes that start at system startup  and keep running forever as a service.They dont die.
 
-## Opdracht
+## Assignment
 - Start the ssh daemon.
 - Find out the PID of the ssh daemon.
 - Find out how much memory the sshd is using.
 - Stop or kill the sshd process.
 
 
-## Gebruikte bronnen
+## Source
 
 https://www.cyberciti.biz/faq/howto-start-stop-ssh-server/
 
@@ -29,8 +29,13 @@ https://linux.die.net/man/1/pgrep
 https://www.cyberciti.biz/faq/howto-display-process-pid-under-linux-unix/
 
 
-## Ervaren problemen
-## Resultaat
+## Issues
+
+Could not start the ssh daemon initially because it was not installed . So to solve this I have to use following command to install ssh.
+
+sudo apt-get install openssh-server
+
+## Result
 1. To start SSH daemon - sudo service ssh start
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/startSSh.png)
