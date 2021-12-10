@@ -31,7 +31,7 @@ https://www.cyberciti.biz/faq/howto-display-process-pid-under-linux-unix/
 
 ## Issues
 
-Could not start the ssh daemon initially because it was not installed . So to solve this I have to use following command to install ssh.
+Could not start the ssh daemon initially because ssh server was not installed . So to solve this I have to use following command to install ssh server.
 
 sudo apt-get install openssh-server
 
