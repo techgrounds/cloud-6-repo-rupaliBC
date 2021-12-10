@@ -30,3 +30,15 @@ Exercise:
 
 ![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/cron4.png)
 
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/cronn1.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/cronn2.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/cronn3.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/cronn4.png)
+
+
+
+
+
