@@ -19,4 +19,6 @@
 ### Ervaren problemen
 
 ### Resultaat
+- EC2 free tier
+[]
 
