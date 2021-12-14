@@ -20,5 +20,10 @@
 
 ### Resultaat
 - EC2 free tier
-[]
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/EC2.png)
+- S3 free tier
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/s3.png)
+
+
+
 
