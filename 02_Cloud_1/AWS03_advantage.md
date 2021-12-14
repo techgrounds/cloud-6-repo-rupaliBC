@@ -10,8 +10,8 @@ The six advantages listed are:
 - Go global in minutes
 
 ## Key-terms
-- [Capex](../beschrijvingen/storage-types.md#Capex)
-- [Opex](../beschrijvingen/storage-types.md#Opex)
+- [Capex](../beschrijvingen/cloudCost.md#Capex)
+- [Opex](../beschrijvingen/cloudCost.md#Opex)
 ## Opdracht
 The six advantages of cloud computing.
 
