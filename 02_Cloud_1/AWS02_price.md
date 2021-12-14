@@ -4,6 +4,11 @@ One of the main reasons for moving to the cloud is cost. If done well, public cl
 You pay only for the compute capacity, storage, and outbound data transfer that you use. You never pay for inbound data transfer and data transfer between services within the same region.
 
 ## Key-terms
+ - [Pay as you go](../beschrijvingen/cloudCost.md#Pay_as_you_go)
+ - [Save when you reserve](../beschrijvingen/cloudCost.md#Save_when_you_reserve)
+ - [Pay less when using more](../beschrijvingen/cloudCost.md#Pay_less_when_using_more)
+ - [Pay less as AWS grows](../beschrijvingen/cloudCost.md#Pay_less_as_AWS_grows)
+ 
 - Pay-as-you-go: Pay as You Go is a pricing principle that lets you rent resources on-demand. This model provides complete flexibility over how many machines you run and for how long. You can leverage on-demand resources when you cannot buy or build your own infrastructure
 - Save when you reserve : AWS provides significant discounts, ranging between 30% and 72%, on reserved EC2 instances. This option lets you reserve compute capacity for a long period of time (1 or 3 years). 
 - Pay less when using more : With AWS, you can get volume based discounts and realize important savings as your usage increases. For services such as S3, pricing is tiered, meaning the more you use, the less you pay per GB.
