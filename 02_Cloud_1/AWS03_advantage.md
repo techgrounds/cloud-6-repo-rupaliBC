@@ -1,7 +1,18 @@
 # AWS Cloud advantages
 
+AWS lists six advantages of cloud computing. These are basic characteristics of the cloud that make it attractive for companies to use.
+The six advantages listed are:
+- Trade Capital expense (CapEx) for variable expense (OpEx)
+- Benefit from massive economies of scale
+- Stop guessing capacity
+- Increase speed and agility
+- Stop spending money on running and maintaining data centers
+- Go global in minutes
+
 ## Key-terms
--
+- Capex: A capital expenditure is incurred when a business spends money, uses collateral, or takes on debt to either buy a new asset or add to the value of an existing asset with the expectation of receiving benefits for longer than a single tax year. An operating expense (OPEX) is an expense required for the day-to-day functioning of a business.
+- Opex: An operating expense (OPEX) is an expense required for the day-to-day functioning of a business.
+
 
 ## Opdracht
 The six advantages of cloud computing.
