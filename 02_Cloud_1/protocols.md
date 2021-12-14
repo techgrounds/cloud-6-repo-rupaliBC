@@ -17,5 +17,8 @@
 .
 
 ### Resultaat
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/TCP.png)
 
-![alt_text]()
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/IP.png)
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/OSI.png)
+
