@@ -4,7 +4,7 @@ One of the main reasons for moving to the cloud is cost. If done well, public cl
 You pay only for the compute capacity, storage, and outbound data transfer that you use. You never pay for inbound data transfer and data transfer between services within the same region.
 
 ## Key-terms
- - [Pay as you go](../beschrijvingen/cloudCost.md#Pay_as_you_go)
+ - [Pay as you go](../beschrijvingen/cloudCost.md###Pay_as_you_go)
  - [Save when you reserve](../beschrijvingen/cloudCost.md#Save_when_you_reserve)
  - [Pay less when using more](../beschrijvingen/cloudCost.md#Pay_less_when_using_more)
  - [Pay less as AWS grows](../beschrijvingen/cloudCost.md#Pay_less_as_AWS_grows)
