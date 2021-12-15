@@ -32,7 +32,11 @@ S3 Glacier
 - 
 
 ### Gebruikte bronnen
--
+- https://aws.amazon.com/s3/
+- https://aws.amazon.com/s3/storage-classes/?nc=sn&loc=3
+- https://www.backblaze.com/blog/cloud-storage-durability-vs-availability/
+- https://wellarchitectedlabs.com/common/documentation/createnews3bucketandaddobjects/
+
 ### Ervaren problemen
 .
 
