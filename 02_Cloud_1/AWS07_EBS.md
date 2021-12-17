@@ -54,6 +54,8 @@ You can create snapshots of a volume to create backups or new identical volumes.
 - https://aws.amazon.com/ebs/
 - https://www.youtube.com/watch?v=N9t2RzmHta8&amp;t=171s
 - https://www.youtube.com/watch?v=6h13JGeiE2Y
+- https://devopscube.com/mount-ebs-volume-ec2-instance/
+
 ### Ervaren problemen
 After launching EC2 instance, I could not connect to EC2 instance so then I have to create Internet Gateway and allow traffic. For that I have to create Route Table 
 
