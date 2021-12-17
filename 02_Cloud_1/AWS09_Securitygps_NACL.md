@@ -25,4 +25,4 @@ By default, a NACL is configured to allow all traffic in and out of the network.
 ### Resultaat
 
 
-![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/EC2.png)
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/.png)
