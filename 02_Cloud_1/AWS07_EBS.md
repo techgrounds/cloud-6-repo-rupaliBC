@@ -58,3 +58,6 @@ You can create snapshots of a volume to create backups or new identical volumes.
 After launching EC2 instance, I could not connect to EC2 instance so then I have to create Internet Gateway and allow traffic. For that I have to create Route Table 
 
 ### Resultaat
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/s3cat.png)
+
