@@ -68,7 +68,7 @@ After launching EC2 instance, I could not connect to EC2 instance so then I have
     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/volume.png)
   - Connect to your EC2 instance using SSH
     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/connectssh.png)
- - Mount the EBS volume on your instance.
+  - Mount the EBS volume on your instance.
  
     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/newvolume.png)
     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs1.png)
