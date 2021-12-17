@@ -6,14 +6,14 @@ Objects are automatically replicated within a region, so that there’s always a
 
 ## Key-terms
 Storage classes:
-S3 Standard
-S3 Standard-IA
-S3 One-zone IA
-S3 Glacier
+  - S3 Standard
+  - S3 Standard-IA
+  - S3 One-zone IA
+  - S3 Glacier
 
 
 ## Opdracht
-### Exercise 1:
+### Exercise 1
 - Start your sandbox lab and open the AWS console.
 - Navigate to the S3 menu.
 - Create new bucket with the following requirements:
@@ -21,8 +21,8 @@ S3 Glacier
 - Public access enabled
 - Upload a cat picture to your bucket.
 - Share the object URL of your cat picture with a peer. Make sure they are able to see the picture.
-### Exercise 2:
-- Create new bucket with the following requirements:
+### Exercise 2
+- Create new bucket with the following requirements
 - Region: Frankfurt (eu-central-1)
 - Public access enabled
 - Upload the four files that make up AWS’ demo website.
