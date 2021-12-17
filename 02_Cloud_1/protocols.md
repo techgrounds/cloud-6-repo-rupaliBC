@@ -4,9 +4,6 @@ The OSI model is a good tool to describe where a protocol 'lives' and what the p
 ## Key-terms
 - TCP - Transmission Control Protocol
 - IP - Internet Protocol
-- 
-
-
 
 ## Opdracht
 
@@ -17,6 +14,11 @@ The OSI model is a good tool to describe where a protocol 'lives' and what the p
 
 ### Gebruikte bronnen
 https://www.techtarget.com/searchnetworking/feature/3-lessons-from-the-2021-Facebook-outage-for-network-pros
+https://www.techrepublic.com/article/exploring-the-anatomy-of-a-data-packet/
+https://www.cloudflare.com/learning/ssl/what-is-https/
+https://www.guru99.com/layers-of-osi-model.html
+https://www.guru99.com/tcp-ip-model.html
+https://www.youtube.com/watch?v=OTwp3xtd4dg
 ### Ervaren problemen
 .
 
