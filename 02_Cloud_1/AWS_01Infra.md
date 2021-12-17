@@ -34,6 +34,12 @@ What happens is that instead of getting the information from the source it just 
 .
 
 ### Resultaat
+### Availability zones 
+(AZs) are isolated locations within data center regions from which public cloud services originate and operate. 
+### Regions 
+Regions are geographic locations in which public cloud service providers' data centers reside.
+### Edge Location
+An edge location is where end users access services located at AWS. They are located in most of the major cities around the world and are specifically used by CloudFront (CDN) to distribute content to end user to reduce latency. 
 ### Why would you choose one region over another?
 
 Five important factors that you must consider when choosing an AWS region and availability zones for new services.
