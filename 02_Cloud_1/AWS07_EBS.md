@@ -59,33 +59,35 @@ After launching EC2 instance, I could not connect to EC2 instance so then I have
 
 ### Resultaat
 - Exercise 1:
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs11.png)
+    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs11.png)
 
--Excercise 2:
+- Excercise 2:
   - Attach your new EBS volume to your EC2 instance.
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/volume.png)
-  - Connect to your ECE instance using SSH
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/connectssh.png)
+    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/volume.png)
+  - Connect to your EC2 instance using SSH
+    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/connectssh.png)
  - Mount the EBS volume on your instance.
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs1.png)
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs2.png)
+ 
+    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/newvolume.png)
+    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs1.png)
+    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebs2.png)
+
   - Create a text file and write it to the mounted EBS volume.
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebstext.png)
+     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebstext.png)
+     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebsls.png)
 
 - Exercise 3:
   - Create a snapshot of your EBS volume.
-  
-  ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebstext.png)
   - Remove the text file from your original EBS volume.
     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/removefileebs.png)
-    
   - Create a new volume using your snapshot.
   - Detach your original EBS volume.
   - Attach the new volume to your EC2 and mount it.
-   ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/lastebs.png)
-    ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/newvolume.png)
   - Find your text file on the new EBS volume.
-     ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ebsls.png)
+   ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/lastebs.png)
+   
+ 
+   
   
 
 
