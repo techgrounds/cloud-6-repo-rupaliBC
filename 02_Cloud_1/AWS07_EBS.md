@@ -17,18 +17,44 @@ You can create snapshots of a volume to create backups or new identical volumes.
 
 
 ## Key-terms
-
+- IOPS 
+- Throughput
+- Persistent storage
+- Resiliency
+- High reliability
 
 ## Opdracht
 ### Exercise 1:
+   - Start your sandbox lab and open the AWS console.
+   - Navigate to the EC2 menu.
+   - Create a t2.micro Amazon Linux 2 machine with all the default settings (the key can be downloaded from the sandbox lab)
+   - Create a new EBS volume with the following requirements:
+      Volume type: General Purpose SSD (gp2)
+      Size: 1 GiB
+      Availability Zone: same as your EC2
+      Wait for its state to be available.
 
 ### Exercise 2:
+   - Attach your new EBS volume to your EC2 instance.
+   - Connect to your EC2 instance using SSH.
+   - Mount the EBS volume on your instance.
+   - Create a text file and write it to the mounted EBS volume.
+
+### Exercise 3:
+  - Create a snapshot of your EBS volume.
+  - Remove the text file from your original EBS volume.
+  - Create a new volume using your snapshot.
+  - Detach your original EBS volume.
+  - Attach the new volume to your EC2 and mount it.
+  - Find your text file on the new EBS volume.
 
 ### Gebruikte bronnen
 - https://www.parkmycloud.com/blog/ebs-volume-types/
 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
-
+- https://aws.amazon.com/ebs/
+- https://www.youtube.com/watch?v=N9t2RzmHta8&amp;t=171s
+- https://www.youtube.com/watch?v=6h13JGeiE2Y
 ### Ervaren problemen
-.
+After launching EC2 instance, I could not connect to EC2 instance so then I have to create Internet Gateway and allow traffic. For that I have to create Route Table 
 
 ### Resultaat
