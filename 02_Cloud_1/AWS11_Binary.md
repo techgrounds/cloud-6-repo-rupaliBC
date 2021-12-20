@@ -19,3 +19,6 @@ https://www.youtube.com/watch?v=RrJXLdv1i74&t=989s
 
 
 ### Resultaat
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/binary1.png)
+
+![alt text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/binary2.png)
