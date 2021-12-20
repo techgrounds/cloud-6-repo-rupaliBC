@@ -22,13 +22,13 @@ Application layer: Gateways,Firewalls, all end devices like PC’s, Phones, Serv
 
 ### Resultaat
 
-Most routers have an overview of all connected devices, find this list. What other information does the router have about connected equipment?
-The default settings
-Where is your DHCP server located on your network? What are the configurations of this?
-See what more network equipment can do for businesses.
+- Most routers have an overview of all connected devices, find this list. What other information does the router have about connected equipment?
 
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/.png)
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/condevice.png)
 
+- Where is your DHCP server located on your network? What are the configurations of this?
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/DHCP.png
 
 
 ### Name and describe the functions of common network devices
