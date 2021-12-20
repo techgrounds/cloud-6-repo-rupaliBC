@@ -35,4 +35,15 @@ https://kinsta.com/blog/ipv4-vs-ipv6/
 
 ### Resultaat
 
+- Find out what your public IP address is of your laptop and mobile on WiFi
+- 
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/lappubip.png)
+
+- Find out what your public IP address is on your mobile via mobile internet (if possible)
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/pubipmobiledata.png)
+
+- Create a VM in your cloud with a public IP. Connect to this VM.
+   - Remove the public IP address from your VM. Understand what is happening with your connection.
 When I removed the Public IP adrress from my instance I could not connect to the instance.
+
