@@ -39,4 +39,10 @@
 4. Switch – A switch is a multiport bridge with a buffer and a design that can boost its efficiency(a large number of ports imply less traffic) and performance. A switch is a data link layer device. The switch can perform error checking before forwarding data, which makes it very efficient as it does not forward packets that have errors and forward good packets selectively to the correct port only.  In other words, the switch divides the collision domain of hosts, but broadcast domain remains the same. 
 5. Routers – A router is a device like a switch that routes data packets based on their IP addresses. The router is mainly a Network Layer device. Routers normally connect LANs and WANs together and have a dynamically updating routing table based on which they make decisions on routing the data packets. Router divide broadcast domains of hosts connected through it.
 
- 
+ ### See what more network devices can do for businesses.
+- Sharing devices such as printers saves money.
+- Site (software) licences are likely to be cheaper than buying several standalone licences.
+- Files can easily be shared between users.
+- Network users can communicate by email and instant messenger.
+- Security is good - users cannot see other users' files unlike on stand-alone machines.
+- Data is easy to backup as all the data is stored on the file server.
