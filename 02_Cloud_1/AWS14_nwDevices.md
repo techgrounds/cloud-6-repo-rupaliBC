@@ -1,4 +1,4 @@
-# AWS S3 Network Devices
+# AWS Network Devices
 
 - Physical layer or below : Hubs, Repeaters, Cables, Fibers, Wireless..
 - Data-link layer: Bridges, Modems, Network cards, 2-layer switches.
