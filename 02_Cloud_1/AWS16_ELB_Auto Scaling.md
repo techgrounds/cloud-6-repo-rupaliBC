@@ -27,4 +27,14 @@ https://www.youtube.com/watch?v=qpHLRc4Qt1E
 ### Resultaat
 
 
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/.png)
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ELB1.png)
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ELB2.png)
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ELB3.png)
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ELB4.png)
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ELB5.png)
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/ELB6.png)
