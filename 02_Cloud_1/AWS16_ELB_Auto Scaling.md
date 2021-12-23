@@ -27,4 +27,4 @@ https://www.youtube.com/watch?v=qpHLRc4Qt1E
 ### Resultaat
 
 
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/s3cat.png)
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/.png)
