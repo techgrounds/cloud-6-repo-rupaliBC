@@ -1,9 +1,11 @@
 # AWS VPC
 Amazon VPC is typically described as a virtual private data center in the cloud. It is a virtual network that is logically isolated from other VPCs.
 With a VPC you have full control over the design of the network. You can create subnets, internet gateways (igw), NAT gateways, VPN connections, and more.
+
 There is always a default VPC when you create a new AWS account, but you can add up to 5 non-default VPCs per region per account. This is a soft limit. That is, you can request the limit to be raised.
 Many services, like EC2, RDS and ECS require a VPC to be placed into.
 When you create a VPC, you must assign a CIDR block. Choose your CIDR block and subnet mask carefully, as they have to allow for enough subnets and hosts and cannot be changed after creation.
+
 Subnets can be either public or private. The only difference is that private subnets do not have an entry for the internet gateway (igw) in their route table, where public subnets do. In other words, private subnets cannot access the internet without a NAT gateway or a NAT instance.
 VPCs operate at the regional level, while subnets can only be placed into a single Availability Zone.
 Elastic IPs are also available from the VPC menu. EIPs are public IP addresses that can be dynamically allocated to resources like EC2 instances or NAT gateways.
@@ -100,16 +102,21 @@ https://www.youtube.com/watch?v=b1b6JTYnbjU
 
 ### Resultaat
 
-
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/vpc1.png)
-
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/vpc2.png)
+#### VPC with public and private subnet
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/vpc3.png)
 
+#### Private route table
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/vpc4.png)
 
+#### Launching an EC2 instance
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/vpc1.png)
+
 #### Connecting to server using the IPv4 DNS name
+
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/vpc2.png)
+
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/VPC.png)
