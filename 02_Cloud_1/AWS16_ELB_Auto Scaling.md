@@ -67,9 +67,9 @@ https://aws.amazon.com/elasticloadbalancing/
 https://www.amazonaws.cn/en/elasticloadbalancing/
 
 https://www.youtube.com/watch?v=qpHLRc4Qt1E
--
+
 ### Ervaren problemen
-.
+
 
 ### Resultaat
 
