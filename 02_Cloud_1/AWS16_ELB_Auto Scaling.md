@@ -6,7 +6,8 @@ Application Load Balancer is best suited for load balancing of HTTP and HTTPS tr
 Network Load Balancer is best suited for load balancing of Transmission Control Protocol (TCP), User Datagram Protocol (UDP), and Transport Layer Security (TLS) traffic where extreme performance is required. 
 
 ## Key-terms
-
+- AMI -An Amazon Machine Image (AMI) provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you need multiple instances with the same configuration. You can use different AMIs to launch instances when you need instances with different configurations.
+- Auto Scaling - Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application.
 
 ## Opdracht
 ### Exercise 1
