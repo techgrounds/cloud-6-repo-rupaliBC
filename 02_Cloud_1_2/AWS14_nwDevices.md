@@ -12,11 +12,16 @@
 ## Key-terms
 
 ## Opdracht
-
-### Gebruikte bronnen
 - Name and describe the functions of common network devices
 - Most routers have an overview of all connected devices, find this list. What other information does the router have about connected equipment?
 -  Where is your DHCP server located on your network? What are the configurations of this?
+### Gebruikte bronnen
+- https://www.geeksforgeeks.org/network-devices-hub-repeater-bridge-switch-router-gateways/
+- https://www.youtube.com/watch?v=eMamgWllRFY
+- https://www.comparitech.com/net-admin/hub-vs-switch-vs-router/
+- https://www.educba.com/types-of-network-devices/
+- https://whatismyipaddress.com/network-devices
+
 ### Ervaren problemen
 .
 
