@@ -98,7 +98,7 @@ https://www.youtube.com/watch?v=b1b6JTYnbjU
 
 
 ### Ervaren problemen
-.
+
 
 ### Resultaat
 

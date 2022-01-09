@@ -3,6 +3,12 @@ The AWS Well-Architected Framework helps you understand the pros and cons of dec
 
 ## Key-terms
 - The Operational Excellence pillar : This includes the ability to support development and run workloads effectively, gain insight into their operations, and to continuously improve supporting processes and procedures to deliver business value.
+- Security : The Security pillar encompasses the ability to protect data, systems, and assets to take advantage of cloud technologies to improve your security.
+- Reliability : The Reliability pillar encompasses the ability of a workload to perform its intended function correctly and consistently when it’s expected to. This includes the ability to operate and test the workload through its total lifecycle
+- Performance Efficiency : The Performance Efficiency pillar includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
+- Cost Optimization : The Cost Optimization pillar includes the ability to run systems to deliver business value at the lowest price point.
+- Sustainability : The Sustainability pillar focuses on environmental impacts, especially energy consumption and efficiency, since they are important levers for architects to inform direct action to reduce resource usage.
+
 ## Opdracht
 
 ### Gebruikte bronnen

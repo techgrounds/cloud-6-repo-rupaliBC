@@ -10,6 +10,7 @@
 
 
 ## Key-terms
+- DHCP Server
 
 ## Opdracht
 - Name and describe the functions of common network devices
@@ -23,7 +24,7 @@
 - https://whatismyipaddress.com/network-devices
 
 ### Ervaren problemen
-.
+
 
 ### Resultaat
 
