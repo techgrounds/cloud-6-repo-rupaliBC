@@ -14,8 +14,6 @@ When a user opens a web browser and enters your domain name (example.com) or sub
 - Check the health of your resources
 
 Route 53 sends automated requests over the internet to a resource, such as a web server, to verify that it's reachable, available, and functional. You also can choose to receive notifications when a resource becomes unavailable and choose to route internet traffic away from unhealthy resources.
-
-## Key-terms
 - routing policy - 
 A setting for records that determines how Route 53 responds to DNS queries. 
 
@@ -33,6 +31,23 @@ traffic to the resource that provides the best latency.
 up to eight healthy records selected at random.
 - Weighted routing policy – Use to route traffic to multiple resources in proportions that you
 specify
+## Key-terms
+- Domain Name System (DNS) : 
+A worldwide network of servers that help computers, smart phones, tablets, and other IP-enabled
+devices to communicate with one another.
+
+- Domain name : The name, such as example.com, that a user types in the address bar of a web browser to access a
+website or a web application
+
+- Hosted zone : A container for records, which include information about how you want to route traffic for a domain
+(such as example.com) and all of its subdomains
+
+- Name servers : Servers in the Domain Name System (DNS) that help to translate domain names into the IP
+addresses that computers use to communicate with one another
+- DNS failover : A method for routing traffic away from unhealthy resources and to healthy resources
+
+- private DNS : A local version of the Domain Name System (DNS) that lets you route traffic for a domain and its
+subdomains to Amazon EC2 instances within one or more Amazon virtual private clouds (VPCs).
 ## Opdracht
 Bestudeer:
 
