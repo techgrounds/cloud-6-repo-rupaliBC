@@ -32,15 +32,35 @@ DynamoDB allows you to store multiple items with the same partition keys.
 Create a NoSQL table Sales Information. It should contain Order Nr ( Partition Key) , Product Nr, Product Name and Price ( in $ )
 - Choose Provisioned Capacity Mode
 - Auto Scaling off 
--  Read Capacity Unit = 5 , Write Capacity Unit = 5
+- Read Capacity Unit = 5 , Write Capacity Unit = 5
 - The partition key should be set.
 - You should be able to sort by Order Number
 - Add at least five items to the table.
 - Scan the table to search for all the Products with Price > 100 .
-- Perform a query to find one specific Order Number in the table and then delete the item.
+- A query to find one specific Order Number in the table.
 
 ### Gebruikte bronnen
 
 ### Ervaren problemen
 
 ### Resultaat
+Create Table with 5 items with attributes Order Nr., Product Nr, Product Name and Price ( in $ )
+
+ ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo1.png)
+
+ Scan the table with with Attribute Price > 100 
+ 
+ ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo2.png)
+
+ Result of the above scan:
+ 
+ ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo3.png)
+ 
+ Query the table with Order Nr 1002
+
+ ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo6.png)
+ 
+ Result of the abov query :
+
+ ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo5.png)
+ 
