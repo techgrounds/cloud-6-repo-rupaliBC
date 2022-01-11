@@ -44,11 +44,11 @@ Create a NoSQL table Sales Information. It should contain Order Nr ( Partition K
 ### Ervaren problemen
 
 ### Resultaat
-Create Table with 5 items with attributes Order Nr., Product Nr, Product Name and Price ( in $ )
+Create Table with 5 items with attributes Order Nr., Product Nr, Product Name and Price ( in $ ) :
 
  ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo1.png)
 
- Scan the table with with Attribute Price > 100 
+ Scan the table with with Attribute Price > 200 
  
  ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo2.png)
 
@@ -56,7 +56,7 @@ Create Table with 5 items with attributes Order Nr., Product Nr, Product Name an
  
  ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo3.png)
  
- Query the table with Order Nr 1002
+ Query the table with Order Nr 1002 :
 
  ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/dynamo6.png)
  
