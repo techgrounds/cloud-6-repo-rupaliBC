@@ -1,30 +1,17 @@
 # DynamoDB
-DynamoDB is a fast and flexible NoSQL database designed for applications that need consistent, single-digit millisecond latency at any scale.it is a fully managed database It has a very flexible data model. This means that you don't need to define your database schema upfront. It also has reliable performance.
+Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. DynamoDB lets you offload the administrative burdens of operating and scaling a distributed database so that you don't have to worry about hardware provisioning, setup and configuration, replication, software patching, or cluster scaling. DynamoDB also offers encryption at rest, which eliminates the operational burden and complexity involved in protecting sensitive data. 
 
+With DynamoDB, you can create database tables that can store and retrieve any amount of data and serve any level of request traffic. You can scale up or scale down your tables' throughput capacity without downtime or performance degradation.
 DynamoDB is a good fit for mobile gaming, ad-tech, IoT and many other applications.
 
-DynamoDB Tables
-DynamoDB tables consist of 
-- Items (Think of a row of data in a table).
-- Attributes ((Think of a column of data in a table).
 
-Supports key-value and document data structures.
-Key= the name of the data.  Value= the data itself.
-
-DynamoDB- Primary Keys
-
-DynamoDB stores and retrieves data based on a Primary key
-DynamoDB also uses Partition keys to determine the physical location data is stored.
-
-If you are using a partition key as your Primary key, then no items will have the same Partition key.
-Composite Keys (Partition Key + Sort Key) can be used in Combination.
-
-Two items may have the same partition key, but must have a different sort key.
-
-All items with the same partition key are stored together and then sorted according to the sort key value.
-
-DynamoDB allows you to store multiple items with the same partition keys.
 ## Key-terms
+- Items - A row of data in a table
+- Attributes - A column of data in a table.
+- Partition key – A simple primary key, composed of one attribute known as the partition key. DynamoDB uses the partition key's value as input to an internal hash function. 
+- Composite key - In database design, a composite key is a candidate key that consists of two or more attributes (table columns) that together uniquely identify an entity occurrence (table row)
+- Read Capacity Unit (RCU): A read capacity unit represents one strongly consistent read per second, or two eventually consistent reads per second, for an item up to 4 KB in size.
+- Write Capacity Unit (WCU) : In case of write capacity the number is 1 KB. That is each write that is 1KB or less will use 1 write capacity and writes that are more than 1 KB in size will be rounded off to the next 1 KB. 
 
 ## Opdracht
 
@@ -41,6 +28,10 @@ Create a NoSQL table Sales Information. It should contain Order Nr ( Partition K
 
 ### Gebruikte bronnen
 
+- https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html
+- https://www.youtube.com/watch?v=dOTUl2mZNVQ
+- https://play.whizlabs.com/site/task_details?lab_type=1&task_id=13&quest_id=37
+- https://www.dynamodbguide.com/inserting-retrieving-items
 ### Ervaren problemen
 
 ### Resultaat
