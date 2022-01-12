@@ -43,9 +43,15 @@ export DBUSER="`echo $CREDS | jq -r '.username'`"
 export DBPASS="`echo $CREDS | jq -r '.password'`"
 echo "export DBPASS=\"$DBPASS\"" >> /home/ec2-user/.bashrc
 echo "export DBUSER=$DBUSER" >> /home/ec2-user/.bashrc
-#### Verify your DB cluster
+#### Verify your DB cluster : 
 echo $DBUSER
-###### Connect to the DB Cluster
+
+You should see administrator as the response string. Next, verify the version of the database engine created. Run the command below, replacing the [clusterEndpoint] placeholder with the value of the cluster endpoint created in the preceding steps:
+
+
+mysql -h[clusterEndpoint] -u$DBUSER -p"$DBPASS" -e"SELECT @@aurora_version;"
+
+#### Connect to the DB Cluster : 
 - mysql -h[clusterEndpoint] -u$DBUSER -p"$DBPASS" mylab
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/aurora4.png)
