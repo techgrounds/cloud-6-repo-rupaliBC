@@ -6,16 +6,16 @@ AWS Lambda is a serverless computing service provided by Amazon Web Services (AW
 - Function: 
 A function is a resource that you can invoke to run your code in Lambda. A function has code to process the events that you pass into the function or that other AWS services send to the function.
 
-- Trigger
+- Trigger : 
 A trigger is a resource or configuration that invokes a Lambda function.
 
-- Event
+- Event : 
 An event is a JSON-formatted document that contains data for a Lambda function to process. The runtime converts the event to an object and passes it to your function code. When you invoke a function, you determine the structure and contents of the event.
 
-- Execution environment
+- Execution environment : 
 An execution environment provides a secure and isolated runtime environment for your Lambda function.
 
-- Runtime
+- Runtime : 
 The runtime provides a language-specific environment that runs in an execution environment.
 
 ## Opdracht
