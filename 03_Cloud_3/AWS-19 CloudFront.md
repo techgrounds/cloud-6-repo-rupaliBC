@@ -6,6 +6,7 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
 
 ## Opdracht
 Bestudeer: Cloudfront
+
 How CloudFront delivers content to your users
 After you configure CloudFront to deliver your content, here's what happens when users request your files:
 
@@ -19,7 +20,7 @@ After you configure CloudFront to deliver your content, here's what happens when
 
 - The origin servers send the files back to the edge location.
 
-As soon as the first byte arrives from the origin, CloudFront begins to forward the files to the user. CloudFront also adds the files to the cache in the edge location for the next time someone requests those files.
+- As soon as the first byte arrives from the origin, CloudFront begins to forward the files to the user. CloudFront also adds the files to the cache in the edge location for the next time someone requests those files.
 
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/cf.png)
