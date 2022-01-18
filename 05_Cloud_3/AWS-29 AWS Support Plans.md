@@ -47,4 +47,4 @@ Bestudeer:
 ### Resultaat
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/sp.png)
 
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/sp1.png)
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/sp2.png)
