@@ -25,7 +25,7 @@ You can add two-factor authentication to your account and to individual users fo
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/iam11.png)
 
 ### - Policy applied to the bucket :
-```` ``` {
+ ``` {
     "Version": "2012-10-17",
     "Id": "123",
     "Statement": [
@@ -49,7 +49,8 @@ You can add two-factor authentication to your account and to individual users fo
             "Resource": "arn:aws:s3:::mfabucket11/*"
         }
     ]
-}  ``` ````
+} 
+ ```
 
 ### - 2 Users created one with assigned MFA device
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/iam1.png)
@@ -68,4 +69,4 @@ You can add two-factor authentication to your account and to individual users fo
 
 ### - A User only with assigned MFA could write in the s3 bucket . This is because we have json policy which says only MFA users are allowed to access the bucket for write/read opertions.
 
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/iam11.png)
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/iam8.png)
