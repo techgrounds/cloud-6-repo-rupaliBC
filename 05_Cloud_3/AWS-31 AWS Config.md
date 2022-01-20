@@ -22,7 +22,8 @@ Bestudeer:
 - AWS Config
 
 ### Gebruikte bronnen
-
+- https://docs.aws.amazon.com/config/
+- https://www.youtube.com/watch?v=BoHJVGzq-58&t=348s
 ### Ervaren problemen
 
 ### Resultaat
