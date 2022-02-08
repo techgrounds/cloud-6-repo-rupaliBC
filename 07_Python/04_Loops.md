@@ -12,4 +12,28 @@
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+### Exercise 1:
+```
+x = 0
+while x <= 10:
+    print(x)
+    x+=1
+```
+### Exercise 2:
+```
+x = 5
+for i in range(50):
+    # DO SOMETHING HERE
+   
+    if i == 10 :
+        break
+    print (x*i)
+```
+### Exercise 3:
+```
+arr = ["x", "y","z","A","B","C"]
+for i in arr :
+    if i == "A" :
+        continue
+    print (i)
+```

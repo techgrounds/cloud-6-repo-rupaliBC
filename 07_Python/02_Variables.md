@@ -12,4 +12,28 @@
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+### Exercise 1:
+```
+x = 12
+y = 10
+print (x,y)
+z= x+y
+print(z)
+
+```
+
+### Exercise 2:
+```
+name= "Rupali"
+print( "hello, " + name)
+```
+### Exercise 3:
+```
+x = "Netherland"
+print ( "Value 1 :"  + x)
+x = "is"
+print ( "Value 2 :"  + x)
+x = "beautiful"
+print( "Value 3 :" + x
+```
+

@@ -12,4 +12,15 @@
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+### Exercise 1:
+```
+dict = { "First Name" : "XXX", "Last Name" : "AAA", "Job Title" : "Coach", "Id":100}
+for i,j in dict.items():
+    print(i,j)
+for i in dict.values():
+    print(i)
+```
+### Exercise 2:
+```
+
+```

@@ -12,4 +12,23 @@
 [Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
-[Omschrijf hoe je weet dat je opdracht gelukt is (gebruik screenshots waar nodig).]
+### Exercise 1
+```
+x = ["xxx","yyy","zzz","aaa","bbb"]
+for i in x:
+    print (i)
+```
+### Exercise 2
+```
+from re import X
+
+list = [9,80,16,67,35]
+res = [sum(sub) for sub in zip(list, list[1:] + [list[0]])]  
+print (res)
+for i in range(len(list)):
+    
+    if i==len(list)-1:
+      print(list[0]+list[i])
+    else:
+      print (list[i]+list[i+1])
+```
