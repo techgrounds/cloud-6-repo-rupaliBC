@@ -20,7 +20,6 @@ for i in x:
 ```
 ### Exercise 2
 ```
-from re import X
 
 list = [9,80,16,67,35]
 res = [sum(sub) for sub in zip(list, list[1:] + [list[0]])]  
