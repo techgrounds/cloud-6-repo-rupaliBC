@@ -47,6 +47,34 @@ We will create a sample Lambda function to be triggered on an S3 Object upload e
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/lamb3.png)
 
+
+#### JSon Policy 
+
+```
+{ 
+   "Version":"2012-10-17",
+   "Statement":[ 
+      { 
+         "Effect":"Allow",
+         "Action":[ 
+            "s3:GetObject"
+         ],
+         "Resource":[ 
+            "arn:aws:s3:::your_source_bucket_name/*"
+         ]
+      },
+      { 
+         "Effect":"Allow",
+         "Action":[ 
+            "s3:PutObject"
+         ],
+         "Resource":[ 
+            "arn:aws:s3:::your_destination_bucket_name/*"
+         ]
+      }
+   ]
+}
+```
 #### IAM Role: 
 
 ![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/lamb4.png)
