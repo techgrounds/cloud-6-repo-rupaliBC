@@ -3,3 +3,5 @@ for i,j in dict.items():
     print(i,j)
 for i in dict.values():
     print(i)
+for x,y in dict.items():
+    print(x,y)
