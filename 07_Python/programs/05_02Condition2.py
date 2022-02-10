@@ -1,7 +1,7 @@
 
 while True:
-    x = input ("Enter your number ")
-    x = int(x)
+    x = int(input ("Enter your number "))
+ 
     if x < 100:
         print( " The number is smaller than 100 ")
     elif x > 100:

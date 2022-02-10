@@ -12,8 +12,9 @@ You can add two-factor authentication to your account and to individual users fo
 - Resource-based policies – Resource-based policies are JSON policy documents that you attach to a resource such as an Amazon S3 bucket. These policies grant the specified principal permission to perform specific actions on that resource and defines under what conditions this applies. Resource-based policies are inline policies. There are no managed resource-based policies.
 
 ## Opdracht
-- Create a s3 bucket for a company where each user can create their own Read and Write data with Multi-Factor authetication. 
-- Provide a policy where a user is allowed to read or denied to write an object in s3 bucket.
+- Create a s3 bucket for a company where each user with Multi-Factor authetication can Read and Write data. 
+- Create two users one with Multi-Factor authetication (MFA) and one without MFA
+- Provide a policy where users only with MFA are allowed to read / write an object in s3 bucket.
 ### Gebruikte bronnen
 - https://www.youtube.com/watch?v=GjVFf83dcE8
 - https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users
