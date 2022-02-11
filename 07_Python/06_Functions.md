@@ -1,4 +1,4 @@
-# [Functions]
+# Functions
 A function is a block of code that only runs when it is called. Functions are recognizable by the brackets () next to the function name. These brackets serve as a place to input data into a function.
 Functions can return data as a result.
 
