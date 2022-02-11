@@ -25,10 +25,9 @@ Rewrite your function so that it takes a string as an argument. Then, it should 
 Write the custom function avg() so that it returns the average of the given parameters.
 
 ### Gebruikte bronnen
-[Plaats hier de bronnen die je hebt gebruikt.]
+
 
 ### Ervaren problemen
-[Geef een korte beschrijving van de problemen waar je tegenaan bent gelopen met je gevonden oplossing.]
 
 ### Resultaat
 ### Exercise 1:
