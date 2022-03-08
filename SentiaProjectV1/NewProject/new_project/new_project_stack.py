@@ -3,7 +3,6 @@
 
 
 from itertools import count
-from msilib.schema import Environment
 from multiprocessing import Event
 from operator import countOf
 
@@ -18,15 +17,13 @@ from aws_cdk import (
     RemovalPolicy,
     Stack,
      CfnOutput,
-    
+    Tag, 
     aws_ec2 as ec2,
     aws_ssm as ssm,
-    aws_kms as kms,
     aws_backup as backup,
     aws_events as events,
     aws_iam as iam,
     Tags
-    
     
    
     
@@ -42,49 +39,14 @@ class NewProjectStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        #####     Parameters    ##########
-        myenvironment=self.node.try_get_context("myenvironment")
-
-         ###     VPC parameters    ########
-        vpcenv=myenvironment.get("vpc_s")
-        vpc1_id=vpcenv.get("vpc1_id")
-        vpc1_max_az= vpcenv.get("vpc1_max_az")
-        vpc1_subnet_name= vpcenv.get("vpc1_subnet_name")
-        vpc1_cidr_range=vpcenv.get("vpc1_cidr_range")
-        vpc2_id=vpcenv.get("vpc2_id")
-        vpc2_max_az=vpcenv.get("vpc2_max_az")
-        vpc2_subnet_name= vpcenv.get("vpc2_subnet_name")
-        vpc2_cidr_range=vpcenv.get("vpc2_cidr_range")
-        ## Peering #####
-        peering_id= vpcenv.get("peering_id")
-        peering_region= vpcenv.get("peering_region")
-        vpc1_route_id = vpcenv.get("vpc1_route_id")
-        vpc2_route_id = vpcenv.get("vpc2_route_id")
-         ##### server security grp parameters ###
-        SecurityGp=myenvironment.get("SecurityGp")
-        mgsg_id=SecurityGp.get("mgsg_id")
-        mgsg_name=SecurityGp.get("mgsg_name")
-        mgsg_peer= SecurityGp.get("mgsg_peer")
-        websg_id=SecurityGp.get("websg_id")
-        websg_name=SecurityGp.get("websg_name")
-        ##### Instances######
-        Servers=myenvironment.get("Servers")
-        web_instance_id=Servers.get("web_instance_id")
-        web_instance_type= Servers.get("web_instance_type")
-        web_volume_size =Servers.get("web_volume_size")
-        mgmt_instance_id=Servers.get("mgmt_instance_id")
-        mgmt_instance_type= Servers.get("mgmt_instance_type")
-        mgmt_volume_size =Servers.get("mgmt_volume_size")
-                   
-
         ####### VPC ( for web server )###############
        
-        self.vpc = ec2.Vpc(self,vpc1_id,
-                           max_azs=vpc1_max_az,
-                           cidr=vpc1_cidr_range,
+        self.vpc = ec2.Vpc(self, "VPC",
+                           max_azs=2,
+                           cidr="10.10.10.0/24",
                             subnet_configuration=[ec2.SubnetConfiguration(
                                subnet_type=ec2.SubnetType.PUBLIC,
-                               name=vpc1_subnet_name,
+                               name="Public",
                                   )
                             ]
                              )
@@ -94,12 +56,12 @@ class NewProjectStack(Stack):
 
          #### VPC 2 settings for management server  ####
 
-        self.vpc2 = ec2.Vpc(self, vpc2_id,
-                           max_azs=vpc2_max_az,
-                           cidr=vpc2_cidr_range,
+        self.vpc2 = ec2.Vpc(self, "VPC2",
+                           max_azs=2,
+                           cidr="10.20.20.0/24",
                             subnet_configuration=[ec2.SubnetConfiguration(
                                subnet_type=ec2.SubnetType.PUBLIC,
-                               name=vpc2_subnet_name
+                               name="Public"
                                   )
                             ]
                             )
@@ -111,23 +73,28 @@ class NewProjectStack(Stack):
 
         self.VPCPeering = ec2.CfnVPCPeeringConnection(
             self,
-            peering_id,
+            "VPCPeering",
             peer_vpc_id=self.vpc.vpc_id,
             vpc_id=self.vpc2.vpc_id,
-            peer_region= peering_region
-            )
+            peer_region="eu-central-1"
+        )
+       # routetable = ec2.CfnRouteTable(self,"PeerRoute",vpc_id=self.vpc2.vpc_id)
+        #for subnets in self.vpc.public_subnets:
+    
+        #ec2.CfnRoute(self,"routes",route_table_id= routetable,
+                     # destination_cidr_block="10.20.20.0/24",
+                     # vpc_peering_connection_id=ec2.CfnVPCPeeringConnection )      
          
-         
-   
-        for i in range(0,1):                          
-                           self.cfn_Route = ec2.CfnRoute(self, vpc1_route_id,
+        for i in range(0,1):
+                                     
+                           self.cfn_Route = ec2.CfnRoute(self, "VPC1Route",
                            route_table_id=self.vpc.public_subnets[i].route_table.route_table_id,
-                           destination_cidr_block=self.vpc2.vpc_cidr_block,
+                           destination_cidr_block="10.20.20.0/24",
                            vpc_peering_connection_id=self.VPCPeering.ref)
-        for j in range(0,1):              
-                           self.cfn_Route = ec2.CfnRoute(self, vpc2_route_id,
+        for j in range(0,1):                     
+                           self.cfn_Route = ec2.CfnRoute(self, "VPC2Route",
                            route_table_id=self.vpc2.public_subnets[j].route_table.route_table_id,
-                           destination_cidr_block=self.vpc.vpc_cidr_block,
+                           destination_cidr_block="10.10.10.0/24",
                            vpc_peering_connection_id=self.VPCPeering.ref)                               
 
         
@@ -135,89 +102,75 @@ class NewProjectStack(Stack):
 
        ######### AMI linux    ############         
                      
-        amzn_linux = ec2.MachineImage.latest_amazon_linux(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
+        amzn_linux = ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
                                  edition=ec2.AmazonLinuxEdition.STANDARD,
                                  virtualization=ec2.AmazonLinuxVirt.HVM,
                                  storage=ec2.AmazonLinuxStorage.GENERAL_PURPOSE
                                     )
 
-         ### Role ####
-        role1= iam.Role(self,"keyrole1",
-                              assumed_by=iam.ServicePrincipal("ec2.amazonaws.com"),
-                           )
-        role1.add_managed_policy(
-                                 iam.ManagedPolicy.from_aws_managed_policy_name
-                                 ("AmazonSSMFullAccess")
-                                 )
         ### Key Pair
         key = KeyPair(self,"KeyPair",
                         name="WebServerKey",
                         store_public_key=True
                      )
-        
-        key.grant_read_on_private_key(role1)
-        key.grant_read_on_public_key(role1)
+       
         ##### User Data for web server launch ######
         with open("./userdata.sh") as f:
                     user_data = f.read()
 
         ##### Security Group for Management Server  ###########
 
-        MgmtSG=ec2.SecurityGroup(self,mgsg_id,
+        MgmtSG=ec2.SecurityGroup(self,"MgmtSG",
                                  vpc= self.vpc2,
-                                 description="MgmtSecurityGp",
                                  allow_all_outbound=True,
-                                 security_group_name=mgsg_name)
-        MgmtSG.add_ingress_rule(ec2.Peer.ipv4(mgsg_peer),
+                                 security_group_name="MgmtServerSG")
+        MgmtSG.add_ingress_rule(ec2.Peer.ipv4("77.248.14.193/32"),
                                     ec2.Port.tcp(22),
                                     "SSH Connecton")
-        MgmtSG.add_ingress_rule(ec2.Peer.ipv4(mgsg_peer),
+        MgmtSG.add_ingress_rule(ec2.Peer.ipv4("77.248.14.193/32"),
                                     ec2.Port.tcp(80),
                                     "HTTP")
-        MgmtSG.add_ingress_rule(ec2.Peer.ipv4(mgsg_peer),
+        MgmtSG.add_ingress_rule(ec2.Peer.ipv4("77.248.14.193/32"),
                                     ec2.Port.tcp(443),
                                     "HTTPS")
         ##### Security Group for web server ###########
         
-        webSG=ec2.SecurityGroup(self,websg_id,vpc= self.vpc,
-                                  description="WebSecurityGp",
+        webSG=ec2.SecurityGroup(self,"webSG",vpc= self.vpc,
                                  allow_all_outbound=True,
-                                    security_group_name=websg_name)
+                                    security_group_name="WebserverSG")
         webSG.add_ingress_rule(ec2.Peer.any_ipv4(),
                                  ec2.Port.tcp(80),
                                     "http traffic")
         webSG.add_ingress_rule(ec2.Peer.any_ipv4(),
                                  ec2.Port.tcp(443),
                                     "https traffic")
-        webSG.add_ingress_rule(ec2.Peer.security_group_id(MgmtSG.security_group_id), 
+        webSG.add_ingress_rule(ec2.Peer.security_group_id(MgmtSG.security_group_id) ,
                                     ec2.Port.tcp(22),
                                        "ssh")
-                                      
-       # webSG.add_ingress_rule(ec2.Peer.any_ipv4(),
-        #                         ec2.Port.tcp(socket.IPPROTO_ICMP),
-         #                           "ping")
+        webSG.add_ingress_rule(ec2.Peer.any_ipv4(),
+                                 ec2.Port.tcp(socket.IPPROTO_ICMP),
+                                    "ping")
 
 
         ######## Lanuch web server( EC2 Instance )   ########
 
-        instance1 = ec2.Instance(self, web_instance_id,
-                                    instance_type=ec2.InstanceType(web_instance_type),
-                                    machine_image=amzn_linux,
-                                    vpc = self.vpc,
-                                     block_devices= [ec2.BlockDevice(
-                                    device_name="/dev/xvda", 
-                                     volume=ec2.BlockDeviceVolume.ebs(
-                                                                     volume_size= web_volume_size,
-                                                                     volume_type=ec2.EbsDeviceVolumeType.GP2,
-                                                                     encrypted=True
-                                                                      ),
-                                     mapping_enabled= True
-                                       ) 
-                                                ],
-                                 user_data=ec2.UserData.custom(user_data),
-                                 role=role1,
-                                  security_group = webSG,
-                                  key_name=key.key_pair_name
+        instance1 = ec2.Instance(self, "Instance",
+        instance_type=ec2.InstanceType("t2.micro"),
+        machine_image=amzn_linux,
+        vpc = self.vpc,
+        block_devices= [ec2.BlockDevice(
+                        device_name="/dev/xvda", 
+                        volume=ec2.BlockDeviceVolume.ebs(
+                        volume_size=8,
+                        volume_type=ec2.EbsDeviceVolumeType.GP2,
+                        encrypted=True
+                         ),
+                         mapping_enabled= True
+                         ) 
+                         ],
+        user_data=ec2.UserData.custom(user_data),
+        security_group = webSG,
+        key_name=key.key_pair_name
         )
         instance1.connections.allow_from_any_ipv4(port_range=ec2.Port.tcp(80)
                                                   , description="Allow Web Traffic")
@@ -226,17 +179,14 @@ class NewProjectStack(Stack):
         
         CfnOutput(self,"ip", value=str(instance1.instance_private_ip))
        
-        
-        
+ 
+
          ### Key Pair for mgmt server ####
 
         key1 = KeyPair(self,"KeyPair2",
                         name="MgmtServerKey",
                         store_public_key=True
                      )
-        
-        key1.grant_read_on_private_key(role1)
-        key1.grant_read_on_public_key(role1)
        
       #### Nacl ########
        
@@ -248,21 +198,20 @@ class NewProjectStack(Stack):
    
     ######## Lanuch Management server( EC2 Instance )   ########
 
-        instance2 = ec2.Instance(self, mgmt_instance_id,
-                    instance_type=ec2.InstanceType(mgmt_instance_type),
+        instance2 = ec2.Instance(self, "Instance2",
+                    instance_type=ec2.InstanceType("t2.micro"),
                     machine_image=amzn_linux,
                     vpc = self.vpc2,
                     block_devices= [ec2.BlockDevice(
                                 device_name="/dev/xvda", 
                                 volume=ec2.BlockDeviceVolume.ebs(
-                                 volume_size= mgmt_volume_size,
+                                 volume_size=8,
                                 volume_type=ec2.EbsDeviceVolumeType.GP2,
                                 encrypted=True
                     ),
                     mapping_enabled= True
                      )],
-       
-        role=role1,
+        
         security_group = MgmtSG,
         key_name=key1.key_pair_name
         )
@@ -277,9 +226,9 @@ class NewProjectStack(Stack):
 
         #### Back up Management Server ####
 
-        vault1= backup.BackupVault(self,"webVault",backup_vault_name="webVault",removal_policy=RemovalPolicy.DESTROY)
+        vault1= backup.BackupVault(self,"webVault1",backup_vault_name="webVault1",removal_policy=RemovalPolicy.DESTROY)
         backup_plan1 = backup.BackupPlan(self,"Backup1",backup_plan_name="webserverBackup")
-        backup_plan1.add_selection("ec2web",resources=[backup.BackupResource.from_tag(key="webs",value="webbackup")]
+        backup_plan1.add_selection("ebsResource",resources=[backup.BackupResource.from_tag(key="webs",value="webbackup")]
                                                             )
 
         backup_plan1.add_rule(backup.BackupPlanRule(
@@ -293,10 +242,9 @@ class NewProjectStack(Stack):
                               
         #### Back up Management Server ####
         
-        vault2= backup.BackupVault(self,"mgmtVault",
-            backup_vault_name="mgmtVault",removal_policy=RemovalPolicy.DESTROY)
+        vault2= backup.BackupVault(self,"webVault2",backup_vault_name="webVault2",removal_policy=RemovalPolicy.DESTROY)
         backup_plan2 = backup.BackupPlan(self,"Backup2",backup_plan_name="MgmtserverBackup")
-        backup_plan2.add_selection("ec2mgmt",resources=[backup.BackupResource.from_tag(key="mgmt",value="mgmtbackup")]
+        backup_plan2.add_selection("ebsResource1",resources=[backup.BackupResource.from_tag(key="mgmt",value="mgmtbackup")]
                                                             )
 
         backup_plan2.add_rule(backup.BackupPlanRule(
