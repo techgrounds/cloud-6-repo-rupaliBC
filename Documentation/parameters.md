@@ -40,4 +40,18 @@
 | mgmt_instance_type | t2.micro   |
 | mgmt_volume_size   | 8          |
 
-  
+### **Server BackUps**  
+| Parameters | Value  |
+| ---------- | ------ |
+| hour1      | 07     |
+| minute1    | 30     |
+| day1       | \*     |
+| month1     | \*     |
+| year1      | \*     |
+| duration1  | 7 days |
+| hour2      | 07     |
+| minute2    | 30     |
+| day2       | \*     |
+| month2     | \*     |
+| year2      | \*     |
+| duration2  | 7 days |

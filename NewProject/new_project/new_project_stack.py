@@ -1,7 +1,3 @@
-
-
-
-
 from itertools import count
 from msilib.schema import Environment
 from multiprocessing import Event
@@ -17,7 +13,7 @@ from aws_cdk import (
     Duration,
     RemovalPolicy,
     Stack,
-     CfnOutput,
+    CfnOutput,
     
     aws_ec2 as ec2,
     aws_ssm as ssm,
@@ -27,16 +23,10 @@ from aws_cdk import (
     aws_iam as iam,
     Tags
     
-    
-   
-    
+       
 )
 from cdk_ec2_key_pair import KeyPair
-
-
-
-     
-
+  
 class NewProjectStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
@@ -75,8 +65,20 @@ class NewProjectStack(Stack):
         mgmt_instance_id=Servers.get("mgmt_instance_id")
         mgmt_instance_type= Servers.get("mgmt_instance_type")
         mgmt_volume_size =Servers.get("mgmt_volume_size")
-                   
-
+        #######  Backup jobs #######
+        BackupServers=myenvironment.get("BackupServers")    
+        hour1=BackupServers.get("hour1")  
+        minute1=BackupServers.get("minute1")
+        day1=BackupServers.get("day1")
+        month1=BackupServers.get("month1")
+        year1=BackupServers.get("year1")
+        duration1=BackupServers.get("duration1")  
+        hour2=BackupServers.get("hour2")  
+        minute2=BackupServers.get("minute2")
+        day2=BackupServers.get("day2")
+        month2=BackupServers.get("month2")
+        year2=BackupServers.get("year2")
+        duration2=BackupServers.get("duration2")  
         ####### VPC ( for web server )###############
        
         self.vpc = ec2.Vpc(self,vpc1_id,
@@ -198,19 +200,20 @@ class NewProjectStack(Stack):
          #                           "ping")
 
 
-        ######## Lanuch web server( EC2 Instance )   ########
+        ######## Launch web server( EC2 Instance )   ########
 
         instance1 = ec2.Instance(self, web_instance_id,
                                     instance_type=ec2.InstanceType(web_instance_type),
                                     machine_image=amzn_linux,
                                     vpc = self.vpc,
-                                     block_devices= [ec2.BlockDevice(
-                                    device_name="/dev/xvda", 
-                                     volume=ec2.BlockDeviceVolume.ebs(
-                                                                     volume_size= web_volume_size,
-                                                                     volume_type=ec2.EbsDeviceVolumeType.GP2,
-                                                                     encrypted=True
-                                                                      ),
+                                     block_devices= [
+                                        ec2.BlockDevice(
+                                       device_name="/dev/xvda", 
+                                       volume=ec2.BlockDeviceVolume.ebs(
+                                          volume_size= web_volume_size,
+                                          volume_type=ec2.EbsDeviceVolumeType.GP2,
+                                          encrypted=True
+                                          ),
                                      mapping_enabled= True
                                        ) 
                                                 ],
@@ -218,15 +221,16 @@ class NewProjectStack(Stack):
                                  role=role1,
                                   security_group = webSG,
                                   key_name=key.key_pair_name
-        )
-        instance1.connections.allow_from_any_ipv4(port_range=ec2.Port.tcp(80)
-                                                  , description="Allow Web Traffic")
+                                 )
+        instance1.connections.allow_from_any_ipv4(
+                                             port_range=ec2.Port.tcp(80),
+                                             description="Allow Web Traffic"
+                                                )
 
         
         
         CfnOutput(self,"ip", value=str(instance1.instance_private_ip))
        
-        
         
          ### Key Pair for mgmt server ####
 
@@ -246,7 +250,7 @@ class NewProjectStack(Stack):
                traffic=ec2.AclTraffic.all_traffic(),direction=ec2.TrafficDirection.EGRESS,
                   network_acl_entry_name="myentry",rule_action=ec2.Action.ALLOW)
    
-    ######## Lanuch Management server( EC2 Instance )   ########
+    ######## Launch Management server( EC2 Instance )   ########
 
         instance2 = ec2.Instance(self, mgmt_instance_id,
                     instance_type=ec2.InstanceType(mgmt_instance_type),
@@ -275,9 +279,9 @@ class NewProjectStack(Stack):
         Tags.of(instance1).add(key="webs",value="webbackup")
         Tags.of(instance2).add(key="mgmt",value="mgmtbackup")
 
-        #### Back up Management Server ####
+        #### Back up Web Server ####
 
-        vault1= backup.BackupVault(self,"webVault",backup_vault_name="webVault",removal_policy=RemovalPolicy.DESTROY)
+        vault1= backup.BackupVault(self,"WebServerVault",backup_vault_name="WebServerVault",removal_policy=RemovalPolicy.DESTROY)
         backup_plan1 = backup.BackupPlan(self,"Backup1",backup_plan_name="webserverBackup")
         backup_plan1.add_selection("ec2web",resources=[backup.BackupResource.from_tag(key="webs",value="webbackup")]
                                                             )
@@ -285,16 +289,16 @@ class NewProjectStack(Stack):
         backup_plan1.add_rule(backup.BackupPlanRule(
                               backup_vault=vault1,
                               rule_name="WebRule",
-                              schedule_expression=events.Schedule.cron(hour="11" ,minute="35",day="*", month="*",year="*"),
-                              delete_after=Duration.days(7),
+                              schedule_expression=events.Schedule.cron(hour=hour1 ,minute=minute1,day=day1, month=month1,year=year1),
+                              delete_after=Duration.days(duration1),
                               completion_window=Duration.hours(2),
                               start_window=Duration.hours(1)
                                ))           
                               
         #### Back up Management Server ####
         
-        vault2= backup.BackupVault(self,"mgmtVault",
-            backup_vault_name="mgmtVault",removal_policy=RemovalPolicy.DESTROY)
+        vault2= backup.BackupVault(self,"MgmtServerVault",
+            backup_vault_name="MgmtServerVault",removal_policy=RemovalPolicy.DESTROY)
         backup_plan2 = backup.BackupPlan(self,"Backup2",backup_plan_name="MgmtserverBackup")
         backup_plan2.add_selection("ec2mgmt",resources=[backup.BackupResource.from_tag(key="mgmt",value="mgmtbackup")]
                                                             )
@@ -302,8 +306,8 @@ class NewProjectStack(Stack):
         backup_plan2.add_rule(backup.BackupPlanRule(
                               backup_vault=vault2,
                               rule_name="mgmtRule",
-                              schedule_expression=events.Schedule.cron(hour="11" ,minute="15",day="*", month="*",year="*"),
-                              delete_after=Duration.days(7),
+                              schedule_expression=events.Schedule.cron(hour=hour2 ,minute=minute2,day=day2, month=month2,year=year2),
+                              delete_after=Duration.days(duration2),
                               completion_window=Duration.hours(2),
                               start_window=Duration.hours(1)
                                ))                       
