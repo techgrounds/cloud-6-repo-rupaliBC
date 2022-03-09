@@ -78,22 +78,20 @@ The following requirements are indicated as necessary:
 | VPC                            |  2 VPC’s1. mgmt-prd-vpc 2. app-prd-vpc                                                                                                            | Launch 2 VPC’s‘mgmt-prd-vpc’ and ‘app-prd-vpc’with 2 public subnets in different AZ’s.CIDR :10.10.10.0/2410.20.20.0/24Nr of AZ’s =2                                      |                                                                                                                                                                                                           |
 | VPC Peering Connection         | 1. VPC peering connection between 2 VPC’s so that the Management server and Web server can talk to each other via private ip’s                    | Provide Region, Requester/ Accepter name ( VPC names), CIDR blocks                                                                                                       |                                                                                                                                                                                                           |
 | AMI ( Amazon Machine Image )   | 1. Amazon machine image configuration is needed for launching EC2 instances.                                                                      | Generation = Amazon Linux 2; Edition = Standard; Virtualization =HVM; Storage = General Purpose                                                                                |                                                                                                                                                                                                           |
-| EC2Web Server                  | 1. Web server must be installed in an automated manner in app-prd-vpc.2. Storage should be encrypted.                                             | 1. Provide Encrypted Storage Security group. 2.  Allow all inbound traffic for port 443, 80. 3. Allow inbound traffic from mgmt_server for port 22. 4. User Data for web server launch    | User Data script in S3?\#!/bin/bashyum -y install httpdsystemctlenable httpdsystemctl start httpdecho '&lt;html>&lt;h1>Hello From Your Web Server!&lt;/h1>&lt;/html>' > /var/www/html/index.html          |
-| EC2Management Server           | 1. The admin/management server must be reachable with a public IP. 2. The admin/management server should only be reachable from trusted locations | Provide Encrypted Storage; Security group:Allow inbound traffic from mgmt_server for port 22 from Trusted IP’s.                                                            |                                                                                                                                                                                                           |
+| EC2Web Server                  | 1. Web server must be installed in an automated manner in app-prd-vpc.2. Storage should be encrypted.                                             | 1. Provide Encrypted Storage;  2.  Allow all inbound traffic for port 443, 80;  Allow inbound traffic from mgmt_server for port 22.  4. User Data for web server launch    | User Data script in S3? \#!/bin/bash  yum -y install httpd systemctl enable httpd systemctl start httpd echo '&lt;html>&lt;h1>Hello From Your Web Server!&lt;/h1>&lt;/html>' > /var/www/html/index.html          |
+| EC2Management Server           | 1. The admin/management server must be reachable with a public IP. 2. The admin/management server should only be reachable from trusted locations | Provide Encrypted Storage; Security group-: Allow inbound traffic from mgmt_server for port 22 from Trusted IP’s.                                                            |                                                                                                                                                                                                           |
 | Secret Manager                 | 1. EC2 instance key pairs will be stored in Secret Manager                                                                                        | Both public and Private keys will be stored . By default only Private keys get stored. Set Store_Public_Key = True                                                       |                                                                                                                                                                                                           |
 | KMS ( Key Management Service ) | 1. Encrypted storage (EBS, S3) keys are stored in KMS.                                                                                            |                                                                                                                                                                          |                                                                                                                                                                                                           |
 | AWS Backup Service             | 1. The web server must be backed up daily. 2. The backups must be kept for 7 days.                                                                |                                                                                                                                                                          | Uses S3 for backups?                                                                                                                                                                                      |
 | S3 storage                     | 1. For post deployment scripts.                                                                                                                   | Encrypted storage                                                                                                                                                        |                                                                                                                                                                                                           |
-| IAM                            | 1. Create Role for EC2 instance                                                                                                                   |                                                                                                                                                                          |                                                                                                                                                                                                           |
+| IAM                            | 1. Create Role for EC2 instance                                                                                                                   |    With Managed policy "AWSSSMFull Access"                                                                                                                                                                      |                                                                                                                                                                                                           |
 
 
 
 
 
 
-
-
-**Firewall at instance level ( Web Server )**
+### **Firewall at instance level ( Web Server )**
 
 
 
@@ -105,7 +103,7 @@ The following requirements are indicated as necessary:
 
 
 
-**Firewall at instance level ( Management Server )**
+### **Firewall at instance level ( Management Server )**
 
   
 
@@ -114,9 +112,18 @@ The following requirements are indicated as necessary:
 | ---- | -------- | ---------- | ------ | ------------ |
 | SSH  | TCP      | 22         | myIp   | Admin Access |
 
-**  
-**
-## 1. AWS Backup Plan:
+
+
+ ### **VPC Peering Route Table Entry:**
+
+
+   | VPC          | Destination   | Target                        | Status |
+   | ------------ | ------------- | ----------------------------- | ------ |
+   | mgmt-prd-vpc | 10.10.10.0/24 | VPC peering Id ( pcx- \*\*\*) | Active |
+   | app-prd-vpc  | 10.20.20.0/24 | VPC peering Id ( pcx- \*\*\*) | Active |
+
+     
+### **AWS Backup Plan:**
 
      
 
