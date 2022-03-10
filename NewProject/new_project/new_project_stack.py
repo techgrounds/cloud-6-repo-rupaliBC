@@ -26,6 +26,7 @@ from aws_cdk import (
        
 )
 from cdk_ec2_key_pair import KeyPair
+from aws_cdk.aws_s3_assets import Asset
   
 class NewProjectStack(Stack):
 
@@ -160,7 +161,7 @@ class NewProjectStack(Stack):
         key.grant_read_on_private_key(role1)
         key.grant_read_on_public_key(role1)
         ##### User Data for web server launch ######
-        with open("./userdata.sh") as f:
+        with open("./Bucket/userdata.sh") as f:
                     user_data = f.read()
 
         ##### Security Group for Management Server  ###########
@@ -200,6 +201,8 @@ class NewProjectStack(Stack):
          #                           "ping")
 
 
+
+       
         ######## Launch web server( EC2 Instance )   ########
 
         instance1 = ec2.Instance(self, web_instance_id,
@@ -217,7 +220,7 @@ class NewProjectStack(Stack):
                                      mapping_enabled= True
                                        ) 
                                                 ],
-                                 user_data=ec2.UserData.custom(user_data),
+                                # user_data=ec2.UserData.custom(user_data),
                                  role=role1,
                                   security_group = webSG,
                                   key_name=key.key_pair_name
@@ -231,6 +234,23 @@ class NewProjectStack(Stack):
         
         CfnOutput(self,"ip", value=str(instance1.instance_private_ip))
        
+        assets = Asset(
+                  self,
+                  "Assets",
+                  path="./Bucket/userdata.sh"
+                     )
+        
+        path = instance1.user_data.add_s3_download_command(
+                     bucket=assets.bucket,
+                     bucket_key=assets.s3_object_key,
+                     region="eu-central-1",
+        )
+
+        instance1.user_data.add_execute_file_command(
+            file_path=path
+        )
+
+        assets.grant_read(instance1.role)
         
          ### Key Pair for mgmt server ####
 
@@ -251,7 +271,7 @@ class NewProjectStack(Stack):
                   network_acl_entry_name="myentry",rule_action=ec2.Action.ALLOW)
    
     ######## Launch Management server( EC2 Instance )   ########
-
+        
         instance2 = ec2.Instance(self, mgmt_instance_id,
                     instance_type=ec2.InstanceType(mgmt_instance_type),
                     machine_image=amzn_linux,
@@ -270,11 +290,7 @@ class NewProjectStack(Stack):
         security_group = MgmtSG,
         key_name=key1.key_pair_name
         )
-        #instance1.connections.allow_from(instance2,port_range=ec2.Port.tcp(22), description="ssh")
-        ######   Backup plan ######
-        #backuprole=iam.Role(self,"backuprole",assumed_by=iam.ServicePrincipal("backup.amazonaws.com"))
-        #backuprole.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name('AWSBackupFullAccess'))
-
+       
         ## server Tags ###
         Tags.of(instance1).add(key="webs",value="webbackup")
         Tags.of(instance2).add(key="mgmt",value="mgmtbackup")

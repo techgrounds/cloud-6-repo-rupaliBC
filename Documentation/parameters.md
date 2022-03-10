@@ -1,4 +1,6 @@
 ## Parameters:
+Here is the list of all parameters that the script is using. The CDK.json file has to be updated with the required value.The parameters are self explainatory and the values are as per requirement for this project.
+
 
 ### VPC Parameters
 

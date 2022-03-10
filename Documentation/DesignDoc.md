@@ -114,13 +114,23 @@ The following requirements are indicated as necessary:
 
 
 
- ### **VPC Peering Route Table Entry:**
+### **VPC Route Table Entry:**
+****app-prd-vpc****  
+| Destination   | Target                        |
+| ------------- | ----------------------------- |
+| 10.10.10.0/24 | Local                         |
+| 10.20.20.0/24 | VPC peering Id ( pcx- \*\*\*) |
 
 
-   | VPC          | Destination   | Target                        | Status |
-   | ------------ | ------------- | ----------------------------- | ------ |
-   | mgmt-prd-vpc | 10.10.10.0/24 | VPC peering Id ( pcx- \*\*\*) | Active |
-   | app-prd-vpc  | 10.20.20.0/24 | VPC peering Id ( pcx- \*\*\*) | Active |
+
+****prd-prd-vpc****  
+| Destination   | Target                        |
+| ------------- | ----------------------------- |
+| 10.20.20.0/24 | Local                         |
+| 10.10.10.0/24 | VPC peering Id ( pcx- \*\*\*) |
+
+
+
 
      
 ### **AWS Backup Plan:**
