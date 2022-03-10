@@ -296,33 +296,56 @@ class NewProjectStack(Stack):
         Tags.of(instance2).add(key="mgmt",value="mgmtbackup")
 
         #### Back up Web Server ####
-
-        vault1= backup.BackupVault(self,"WebServerVault",backup_vault_name="WebServerVault",removal_policy=RemovalPolicy.DESTROY)
-        backup_plan1 = backup.BackupPlan(self,"Backup1",backup_plan_name="webserverBackup")
-        backup_plan1.add_selection("ec2web",resources=[backup.BackupResource.from_tag(key="webs",value="webbackup")]
+        WebBackupkey = kms.Key(
+            self,
+            "BackupkeyWebServer",
+            removal_policy=RemovalPolicy.DESTROY
+            )
+        vault1= backup.BackupVault(self,"WebServerVault",
+                                    backup_vault_name="WebServerVault",
+                                    encryption_key=WebBackupkey,
+                                    removal_policy=RemovalPolicy.DESTROY
+                                    )
+        backup_plan1 = backup.BackupPlan(self,"Backup1",
+                                          backup_plan_name="webserverBackup"
+                                          )
+        backup_plan1.add_selection("ec2web",resources=[
+                                    backup.BackupResource.from_tag(key="webs",value="webbackup")
+                                             ]
                                                             )
 
         backup_plan1.add_rule(backup.BackupPlanRule(
                               backup_vault=vault1,
                               rule_name="WebRule",
-                              schedule_expression=events.Schedule.cron(hour=hour1 ,minute=minute1,day=day1, month=month1,year=year1),
+                              schedule_expression=events.Schedule.cron
+                                 (hour=hour1 ,minute=minute1,day=day1, month=month1,year=year1),
                               delete_after=Duration.days(duration1),
                               completion_window=Duration.hours(2),
                               start_window=Duration.hours(1)
                                ))           
                               
         #### Back up Management Server ####
-        
+        Mgmtbackupkey = kms.Key(
+            self,
+            "BackupkeyMgmtServer",
+            removal_policy=RemovalPolicy.DESTROY
+            )
         vault2= backup.BackupVault(self,"MgmtServerVault",
-            backup_vault_name="MgmtServerVault",removal_policy=RemovalPolicy.DESTROY)
+                                  backup_vault_name="MgmtServerVault",
+                                  encryption_key=Mgmtbackupkey,
+                                 removal_policy=RemovalPolicy.DESTROY)
         backup_plan2 = backup.BackupPlan(self,"Backup2",backup_plan_name="MgmtserverBackup")
-        backup_plan2.add_selection("ec2mgmt",resources=[backup.BackupResource.from_tag(key="mgmt",value="mgmtbackup")]
+        backup_plan2.add_selection("ec2mgmt",resources=[
+                                          backup.BackupResource.from_tag(key="mgmt",value="mgmtbackup")
+                                          ]
                                                             )
 
         backup_plan2.add_rule(backup.BackupPlanRule(
                               backup_vault=vault2,
                               rule_name="mgmtRule",
-                              schedule_expression=events.Schedule.cron(hour=hour2 ,minute=minute2,day=day2, month=month2,year=year2),
+                              schedule_expression=events.Schedule.cron(
+                                    hour=hour2 ,minute=minute2,day=day2, month=month2,year=year2
+                                                ),
                               delete_after=Duration.days(duration2),
                               completion_window=Duration.hours(2),
                               start_window=Duration.hours(1)
