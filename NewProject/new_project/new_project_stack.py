@@ -2,7 +2,6 @@ from itertools import count
 from msilib.schema import Environment
 from multiprocessing import Event
 from operator import countOf
-
 from cdk_iam_floyd import Events, Iam
 from constructs import Construct
 import boto3
