@@ -142,7 +142,10 @@ class NewProjectStack(Stack):
                                  virtualization=ec2.AmazonLinuxVirt.HVM,
                                  storage=ec2.AmazonLinuxStorage.GENERAL_PURPOSE
                                     )
-
+        ### AMI Windows
+        amzn_windows = ec2.MachineImage.latest_windows(
+            ec2.WindowsVersion.WINDOWS_SERVER_2019_ENGLISH_FULL_BASE
+                           )
          ### Role ####
         role1= iam.Role(self,"keyrole1",
                               assumed_by=iam.ServicePrincipal("ec2.amazonaws.com"),
@@ -172,6 +175,9 @@ class NewProjectStack(Stack):
                                  security_group_name=mgsg_name)
         MgmtSG.add_ingress_rule(ec2.Peer.ipv4(mgsg_peer),
                                     ec2.Port.tcp(22),
+                                    "SSH Connecton")
+        MgmtSG.add_ingress_rule(ec2.Peer.ipv4(mgsg_peer),
+                                    ec2.Port.tcp(3389),
                                     "SSH Connecton")
         MgmtSG.add_ingress_rule(ec2.Peer.ipv4(mgsg_peer),
                                     ec2.Port.tcp(80),
@@ -273,7 +279,7 @@ class NewProjectStack(Stack):
         
         instance2 = ec2.Instance(self, mgmt_instance_id,
                     instance_type=ec2.InstanceType(mgmt_instance_type),
-                    machine_image=amzn_linux,
+                    machine_image=amzn_windows,
                     vpc = self.vpc2,
                     block_devices= [ec2.BlockDevice(
                                 device_name="/dev/xvda", 
