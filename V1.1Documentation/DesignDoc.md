@@ -54,7 +54,7 @@ The following requirements are indicated as necessary:
 - lambda
 
 
-![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/archi33.png)
+![alt_text](https://github.com/techgrounds/cloud-6-repo-rupaliBC/blob/main/00_includes/services.png)
 
 
 ## Assumptions:
